@@ -2,27 +2,24 @@
 
 include "./Controller/PessoaController.php";
 // Pega URL que o usuário esta tentando acessar
-$url = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH); 
+$url = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
-switch($url){
+switch ($url) {
     case "/":
         echo "Página inicial";
-    break;
+        break;
 
     case "/pessoa":
         PessoaController::index();
-    break;
+        break;
 
     case "/pessoa/form":
         PessoaController::form();
-    break;
+        break;
 
-    case "pessoa/form/save":
+    case "/pessoa/form/save":
         PessoaController::save();
-    break;
-
-
-
+        break;
 
     default:
         echo "Erro 404";

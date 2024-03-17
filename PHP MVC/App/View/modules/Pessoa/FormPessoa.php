@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +8,32 @@
 </head>
 
 <style>
-    label, input {
+    label,
+    input {
         display: block;
     }
 </style>
+
 <body>
     <fieldset>
         <legend>Cadastro de Pessoas</legend>
 
-        <form method="post" action="/form">
+        <form method="post" action="/pessoa/form/save">
             <label>Nome:</label>
-            <input id="nome" name="nome" type="text"/>
-            
+            <input id="nome" name="nome" type="text" />
+
             <label>CPF:</label>
-            <input id="cpf" name="cpf" type="text"/>
+            <input id="cpf" name="cpf" type="text" />
 
             <label>Data de nascimento:</label>
-            <input id="data_nascimento" name="data_nascimento" type="date"/>
-        
+            <input id="data_nascimento" name="data_nascimento" type="date" />
+
             <button type="submit">Salvar</button>
         </form>
     </fieldset>
 
 
-    
+
 </body>
+
 </html>
