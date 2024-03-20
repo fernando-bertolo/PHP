@@ -1,31 +1,31 @@
 <?php
 
-class PessoaController
+class UsuarioController
 {
     public static function index()
     {
-        include "Model/PessoaModel.php";
+        include "Model/UsuarioModel.php";
 
-        $model = new PessoaModel();
+        $model = new UsuarioModel();
 
-        $model->name = $_GET['name'];
-        $model->cpf = $_GET['cpf'];
-        $model->data_nascimento = $_GET['data_nascimento'];
+        $model->getAllRows();
+
+        include "View/modules/Usuario/ListaUsuario.php";
     }
 
     public static function form()
     {
-        include "View/modules/Pessoa/FormPessoa.php";
+        include "View/modules/Usuario/FormUsuario.php";
     }
 
     public static function save()
     {
 
-        // chamou a classe PessoaModel
-        include "Model/PessoaModel.php";
+        // chamou a classe UsuarioModel
+        include "Model/UsuarioModel.php";
 
         //Instaciou o objeto da classe
-        $model = new PessoaModel();
+        $model = new UsuarioModel();
 
         // Preencheu as propriedades do objeto com os dados que veio do formulario
         $model->name = $_POST['name'];
@@ -36,6 +36,6 @@ class PessoaController
         $model->save();
 
         //Redireciona para a rota /pessoa
-        header("Location: /pessoa");
+        header("Location: /usuario");
     }
 }

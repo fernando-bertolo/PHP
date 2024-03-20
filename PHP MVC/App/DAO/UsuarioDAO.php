@@ -1,6 +1,6 @@
 <?php
 
-class PessoaDAO
+class UsuarioDAO
 {
 
     private $conection;
@@ -12,9 +12,9 @@ class PessoaDAO
         $this->conection = new PDO($dsn, 'root', 'Fern@ndo123456');
     }
 
-    public function insert(PessoaModel $model)
+    public function insert(UsuarioModel $model)
     {
-        // Preparated state
+        // Preparated statement
 
         // Utiliza o ? devido a preparar a string para ser substituida pelos valores
         $sql = "INSERT INTO usuario (name, cpf, data_nascimento) VALUES (?, ?, ?)";
@@ -30,7 +30,7 @@ class PessoaDAO
         //Salva no banco de dados
         $stmt->execute();
     }
-    public function update(PessoaModel $model)
+    public function update(UsuarioModel $model)
     {
     }
 

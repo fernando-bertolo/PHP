@@ -1,24 +1,25 @@
 <?php
 
-include "./Controller/PessoaController.php";
+include "./Controller/UsuarioController.php";
+include "./Controller/HomeController.php";
 // Pega URL que o usuário esta tentando acessar
 $url = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
 switch ($url) {
     case "/":
-        echo "Página inicial";
+        HomeController::home();
         break;
 
-    case "/pessoa":
-        PessoaController::index();
+    case "/usuario":
+        UsuarioController::index();
         break;
 
-    case "/pessoa/form":
-        PessoaController::form();
+    case "/usuario/form":
+        UsuarioController::form();
         break;
 
-    case "/pessoa/form/save":
-        PessoaController::save();
+    case "/usuario/form/save":
+        UsuarioController::save();
         break;
 
     default:
