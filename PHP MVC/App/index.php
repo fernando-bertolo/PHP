@@ -2,6 +2,7 @@
 
 include "./Controller/UsuarioController.php";
 include "./Controller/HomeController.php";
+include "./Controller/MenuController.php";
 // Pega URL que o usuário esta tentando acessar
 $url = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
@@ -15,9 +16,9 @@ switch ($url) {
         UsuarioController::index();
         break;
 
-    // case "/usuario/form":
-    //     UsuarioController::form();
-    //     break;
+        // case "/usuario/form":
+        //     UsuarioController::form();
+        //     break;
 
     case "/usuario/form/save":
         UsuarioController::save();
@@ -29,6 +30,9 @@ switch ($url) {
 
     case "/usuario/delete":
         UsuarioController::delete();
+        break;
+    case "/menu":
+        MenuController::indexMenu();
         break;
 
     default:

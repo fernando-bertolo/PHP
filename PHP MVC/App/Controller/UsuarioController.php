@@ -10,6 +10,7 @@ class UsuarioController
 
         $model->getAllRows();
 
+        include "View/modules/Menu/indexMenu.php";
         include "View/modules/Usuario/ListaUsuario.php";
     }
 
@@ -29,7 +30,7 @@ class UsuarioController
 
     public static function save()
     {
-    
+
         // chamou a classe UsuarioModel
         include "Model/UsuarioModel.php";
 
@@ -52,7 +53,7 @@ class UsuarioController
     public static function update()
     {
         include_once "Model/UsuarioModel.php";
-        
+
         $model = new UsuarioModel();
 
         $model->idUser = $_POST['idUser'];
@@ -63,7 +64,6 @@ class UsuarioController
         $model->update();
 
         header("Location: /usuario");
-        
     }
 
     public static function delete()
@@ -71,10 +71,9 @@ class UsuarioController
         include "Model/UsuarioModel.php";
 
         $model = new UsuarioModel();
-        
-        $model->deleteById( (int) $_GET['idUser']);
+
+        $model->deleteById((int) $_GET['idUser']);
 
         header("Location: /usuario");
-        
     }
 }
